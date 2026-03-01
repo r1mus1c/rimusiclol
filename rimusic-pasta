@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rimusic | Portfólio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #000; color: #fff; overflow-x: hidden; display: flex; flex-direction: column; align-items: center; }
+        body::before { content: ""; position: fixed; inset: 0; background: radial-gradient(circle at 5% 50%, rgba(0,162,255,0.15), transparent 35%), radial-gradient(circle at 95% 50%, rgba(0,162,255,0.15), transparent 35%); z-index: -1; }
+        .container { max-width: 500px; width: 90%; padding: 40px 0; }
+        .profile-container { margin-bottom: 25px; text-align: center; }
+        .profile-img { width: 115px; height: 115px; border-radius: 50%; border: 2px solid #00a2ff; box-shadow: 0 0 25px rgba(0,162,255,0.5); object-fit: cover; }
+        .username { font-size: 1.8rem; font-weight: bold; margin-top: 10px; }
+        .bio { color: #888; font-size: .95rem; margin-bottom: 20px; }
+        .about-section { background: rgba(0,162,255,0.05); border: 1px solid #00a2ff; border-radius: 12px; padding: 20px; margin-bottom: 30px; }
+        .about-section h2 { color: #00a2ff; font-size: 1.1rem; margin-bottom: 10px; }
+        .about-section p { font-size: .85rem; line-height: 1.6; color: #ddd; }
+        h2 { font-size: .85rem; color: #00a2ff; margin: 25px 0 12px 5px; text-transform: uppercase; letter-spacing: 2px; align-self: flex-start; }
+        .card { background: rgba(255,255,255,0.03); border: 1px solid #1a1a1a; border-radius: 12px; padding: 18px; margin-bottom: 12px; text-decoration: none; color: #fff; display: flex; align-items: center; justify-content: space-between; transition: .3s; cursor: pointer; }
+        .card:hover { border-color: #00a2ff; background: rgba(0,162,255,0.08); transform: translateX(8px); }
+        .card-content h3 { font-size: 1rem; }
+        .card-content p { font-size: .75rem; color: #666; }
+        .version-warning { font-size: .65rem; color: rgba(255,255,255,0.2); margin-top: 5px; display: block; }
+        .btn-exit { border-color: #333!important; background: rgba(255,255,255,0.02)!important; margin-top: 10px; }
+        .btn-exit:hover { border-color: #f44!important; }
+        .visitor-counter { margin-top: 60px; padding: 30px 0; border-top: 1px solid #1a1a1a; width: 100%; text-align: center; }
+        .counter-number { font-size: 2.5rem; font-weight: 900; color: #00a2ff; text-shadow: 0 0 15px rgba(0,162,255,0.6); margin-top: 10px; }
+        #dev-alert { visibility: hidden; min-width: 280px; background: #00a2ff; color: #fff; text-align: center; border-radius: 10px; padding: 16px; position: fixed; z-index: 1000; bottom: 30px; font-weight: bold; }
+        #dev-alert.show { visibility: visible; animation: f-in .5s, f-out .5s 2.5s; }
+        @keyframes f-in { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes f-out { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+    </style>
+</head>
+<body>
+    <div id="dev-alert">⚠️ Esta seção está em desenvolvimento!</div>
+    <div class="container">
+        <div class="profile-container">
+            <img src="https://i.ibb.co/v4m0n9Y/tokito-profile.jpg" class="profile-img">
+            <div class="username">rimusic</div>
+            <div class="bio">Sorry Noob</div>
+        </div>
+        <div class="about-section">
+            <h2><i class="fas fa-user"></i> Sobre Mim</h2>
+            <p>Sou <b>Game Dev</b> e <b>Roblox Developer</b> há 6 anos. Especialista em <b>Luau</b> e <b>JavaScript</b>.</p>
+        </div>
+        <h2>Perfis Oficiais</h2>
+        <a href="https://discord.com/users/rimusic._" class="card" target="_blank"><div class="card-content"><h3>Discord</h3><p>rimusic._</p></div><i class="fab fa-discord" style="color:#5865F2"></i></a>
+        <a href="https://www.roblox.com/users/profile?username=raymen7102" class="card" target="_blank"><div class="card-content"><h3>Roblox</h3><p>raymen7102</p></div><i class="fas fa-cube"></i></a>
+        <h2>Contato</h2>
+        <a href="https://discord.com/users/rimusic._" class="card" style="border-color:rgba(255,68,68,0.4)" target="_blank"><div class="card-content"><h3>Reportar Bugs</h3><p>Algo quebrou? Me avise.</p></div><i class="fas fa-bug" style="color:#f44"></i></a>
+        <a href="https://discord.com/users/rimusic._" class="card" style="border-color:rgba(0,255,170,0.4)" target="_blank"><div class="card-content"><h3>Dar Sugestão</h3><p>Ideias para o site ou game.</p></div><i class="fas fa-lightbulb" style="color:#0fa"></i></a>
+        <h2>Trabalhos</h2>
+        <div class="card" onclick="showAlert()"><div class="card-content"><h3>Sites Criados</h3><p>Em desenvolvimento...</p></div><i class="fas fa-code"></i></div>
+        <div class="card" onclick="showAlert()"><div class="card-content"><h3>Meus Games</h3><p>Em desenvolvimento...</p></div><i class="fas fa-gamepad"></i></div>
+        <h2>Sessão</h2>
+        <div class="card" style="cursor:default"><div class="card-content"><h3>V.00.01</h3><span class="version-warning">Pode cometer bugs por conta da versão do site</span></div><i class="fas fa-code-branch" style="color:#444"></i></div>
+        <div class="card btn-exit" onclick="exitSite()"><div class="card-content"><h3>Sair do Site</h3><p>Encerrar sessão de visualização</p></div><i class="fas fa-sign-out-alt"></i></div>
+        <div class="visitor-counter"><p>Total Visitors</p><div class="counter-number" id="count">0</div></div>
+    </div>
+    <script>
+        function showAlert(){let x=document.getElementById("dev-alert");x.className="show";setTimeout(()=>{x.className=""},3000)}
+        function exitSite(){if(confirm("Deseja realmente sair?"))window.location.href="https://google.com"}
+        function fastCounter(o,e,d){let s=null;const t=(timestamp)=>{if(!s)s=timestamp;const p=Math.min((timestamp-s)/d,1);const v=Math.floor((p===1?1:1-Math.pow(2,-10*p))*e);o.innerHTML=v.toLocaleString('pt-BR');if(p<1)requestAnimationFrame(t)};requestAnimationFrame(t)}
+        setTimeout(()=>fastCounter(document.getElementById("count"),3000000000,1800),800);
+    </script>
+</body>
+</html>
